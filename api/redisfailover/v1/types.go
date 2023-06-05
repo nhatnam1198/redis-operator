@@ -70,6 +70,7 @@ type RedisSettings struct {
 	CustomLivenessProbe           *corev1.Probe                     `json:"customLivenessProbe,omitempty"`
 	CustomReadinessProbe          *corev1.Probe                     `json:"customReadinessProbe,omitempty"`
 	CustomStartupProbe            *corev1.Probe                     `json:"customStartupProbe,omitempty"`
+	AdditionalConfigMapsConfigs   map[string]string                 `json:"additionalConfigMapsConfigs,omitempty"`
 }
 
 // SentinelSettings defines the specification of the sentinel cluster
