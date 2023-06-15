@@ -384,7 +384,7 @@ func generateRedisStatefulSet(rf *redisfailoverv1.RedisFailover, labels map[stri
 		ss.Spec.Template.Spec.Containers[0].LivenessProbe = rf.Spec.Redis.CustomLivenessProbe
 	} else {
 		ss.Spec.Template.Spec.Containers[0].LivenessProbe = &corev1.Probe{
-			InitialDelaySeconds: graceTime,
+			InitialDelaySeconds: 300,
 			TimeoutSeconds:      5,
 			FailureThreshold:    6,
 			PeriodSeconds:       15,
